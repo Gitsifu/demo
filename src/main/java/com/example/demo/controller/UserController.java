@@ -14,15 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
-    private final UserService service;
-
     @Autowired
-    public UserController(UserService service) {
-        this.service = service;
-    }
+    private UserService userService;
 
     @PostMapping("/add")
-    public int add(User user){
-        return service.add(user);
+    public int add(User user) {
+        return userService.add(user);
     }
 }

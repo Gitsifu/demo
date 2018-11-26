@@ -11,16 +11,6 @@ import org.springframework.stereotype.Service;
  * @author sifu
  * @version 1.0.0
  */
-@Service
-public class UserService {
-    private final UserMapper mapper;
-
-    @Autowired
-    public UserService(UserMapper mapper) {
-        this.mapper = mapper;
-    }
-
-    public int add(User user) {
-        return mapper.insert(user);
-    }
+public interface UserService {
+    int add(User user);
 }

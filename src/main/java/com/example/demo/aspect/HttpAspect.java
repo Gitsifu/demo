@@ -11,6 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 
 /**
  * Created by sifu on 2017/8/14
@@ -42,7 +43,7 @@ public class HttpAspect {
         // class_method
         log.info("class_method={}", joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         // 参数
-        log.info("args={}", joinPoint.getArgs());
+        log.info("args={}", Arrays.toString(joinPoint.getArgs()));
     }
 
     @AfterReturning(returning = "object", pointcut = "log()")
